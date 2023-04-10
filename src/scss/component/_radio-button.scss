@@ -1,0 +1,70 @@
+@use "../utils" as *; 
+.radio-button {
+    position: relative;
+    > input {
+        padding: 0;
+        height: initial;
+        width: initial;
+        margin-bottom: 0;
+        display: none;
+        cursor: pointer;
+        &:checked {
+            + {
+                label {
+                    &:after {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: scale(0.9);
+                    }
+                    &:before {
+                        border-color: var(--color-checkbox-bg);
+                    }
+                }
+                label + .contents {
+                    padding-top: 15px;
+                    opacity: 1;
+                    visibility: visible;
+                    max-height: fit-content;
+                }
+            }
+        }
+    }
+    label {
+        position: relative;
+        cursor: pointer;
+        @include flexbox();
+        @include align-items($value: center);
+        @include flex-wrap($value: wrap);
+        margin-bottom: 0 !important;
+        @include toRem(padding-left, 40);
+        color: #000025;
+        @include toRem(font-size, 18);
+        font-weight: 500;
+        &:before {
+            content: '';
+            border: 1px solid var(--color-checkbox);
+            width: 20px;
+            height: 20px;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+            vertical-align: middle;
+            cursor: pointer;
+            @include border-radius(10px);
+        }
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            left: 4px;
+            border-radius: 50%;
+            background-color: var(--color-primary);
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(0);
+            transition: transform .3s;
+        }
+    }
+}

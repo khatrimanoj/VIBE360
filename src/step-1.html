@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="theme-color" content="#BE2530" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VIBE 360 | Home</title>
+    <link rel="icon" href="images/favicon.png" type="image/gif" sizes="16x16" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="images/logo.png" alt="vibe 360" />
+          <img src="images/capita.png" alt="capita" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="main-content">
+          <div class="container">
+            <div class="content">
+              <div class="main-heading">
+                <h2>STEP 1.1 SUBMIT YOUR DETAILS</h2>
+                <p class="text-center">
+                  Please enter your name and email address and check that all
+                  details are correct before proceeding.
+                </p>
+              </div>
+              <section class="step-form">
+                <form class="form">
+                  <p class="text-center pb-30">
+                    If you need support or have any questions please contact
+                    <a href="vibe360@lawsofattraction.com" class="text-primary"
+                      >vibe360@lawsofattraction.com</a
+                    >
+                  </p>
+                  <div class="two-input">
+                    <div class="form-control">
+                      <input
+                        type="text"
+                        name="name"
+                        class="form-input"
+                        placeholder="none"
+                        required
+                      />
+                      <label for="name" class="form-label">First Name</label>
+                    </div>
+                    <div class="form-control">
+                      <input
+                        type="text"
+                        name="name"
+                        class="form-input"
+                        placeholder="none"
+                        required
+                      />
+                      <label for="name" class="form-label">Surname</label>
+                    </div>
+                  </div>
+                  <div class="two-input">
+                    <div class="form-control">
+                      <input type="text" id="DtYrDatepicker" class="datepicker form-input" placeholder="none" required></p>
+                      <label for="name" class="form-label">Pickup Date</label>
+                    </div>
+                    <div class="form-control">
+                      <select name="number" id="number" class="select-ui form-input">
+                        <option>1</option>
+                        <option selected="selected">2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                        <option>15</option>
+                        <option>16</option>
+                        <option>17</option>
+                        <option>18</option>
+                        <option>19</option>
+                      </select>
+                      <label for="name" class="form-label">Select</label>
+                    </div>
+                  </div>
+                  <div class="form-control">
+                    <input
+                      type="email"
+                      name="name"
+                      class="form-input"
+                      placeholder="none"
+                      required
+                    />
+                    <label for="name" class="form-label">Email</label>
+                  </div>
+                  <div class="form-control">
+                    <div class="toggle d-flex justify-content-center">
+                      <input type="checkbox" id="confirmInfo" />
+                      <label for="confirmInfo"
+                        ><span
+                          >I confirm all information is correct</span
+                        ></label
+                      >
+                    </div>
+                  </div>
+                </form>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <img src="images/footer-logo.png" alt="footer logo" />
+          <button
+            type="button"
+            class="btn btn-primary"
+            onclick="window.location.href='step-2.html'"
+          >
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-arrow-narrow-right"
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <line x1="15" y1="16" x2="19" y2="12" />
+                <line x1="15" y1="8" x2="19" y2="12" />
+              </svg>
+            </span>
+          </button>
+          <p>© Laws of Attraction 2023</p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+      $( ".datepicker" ).datepicker();
+      $( ".select-ui" )
+      .selectmenu()
+      .selectmenu( "menuWidget" )
+        .addClass( "overflow" );
+    </script>
+  </body>
+</html>

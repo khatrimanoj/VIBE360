@@ -1,0 +1,27 @@
+@use "variable" as *;
+
+// scss-docs-start theme-colors-map
+
+$colors: (
+    "primary": $primary,
+    "secondary": $secondary,
+    "paragraph": $paragraph,
+    "black": $black,
+    "pure-black": $pure-black,
+    "white": $white,
+    "smoke": $smoke,
+    "border-light": $border-light,
+    "box-border": $box-border,
+    "disable": $disable,
+    "placeholder": $placeholder,
+    "checkbox": $checkbox,
+    "checkbox-bg": $checkbox-bg,
+
+) !default;
+
+$colors-Shade: (
+    "primary-100": $primary,
+) !default;
+
+$colorScheme: map-merge($colors, $colors-Shade);
+

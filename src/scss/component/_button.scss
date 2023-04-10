@@ -1,0 +1,83 @@
+@use "../utils" as *;
+.btn {
+    height: 45px;
+    padding: 0 32px;
+    @include flexbox();
+    @include align-items($value: center);
+    @include justify-content($value: center);
+    @include transition(.3s ease-in-out);
+    @include border-radius(5px);
+    @include toRem(font-size, 16);
+    font-weight: 600;
+    outline: none;
+    &.btn-primary {
+        border: 0;
+        color: var(--color-white);
+        position:relative;
+        overflow:hidden;
+        span {
+            position: relative;
+            color: var(--color-white);
+            @include transition(.3s ease-in-out);
+            .icon {
+                svg {
+                    @include transition(.3s ease-in-out);
+                }
+            }
+        }
+        &:before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background : var(--color-primary);
+            color: var(--color-white);
+            left: 0;
+            bottom: 0;
+            @include transition(.3s ease-in-out);
+            opacity: 1;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border: 2px solid var(--color-primary);
+            width: 100%;
+            height: 100%;
+            @include border-radius(5px);
+        }
+        &:hover {
+            span {
+                color: var(--color-primary);
+                .icon {
+                    svg {
+                        path {
+                            stroke: var(--color-primary);
+                        }
+                    }
+                }
+            }
+            &:before {
+                width: 0;
+                color: var(--color-white);
+            }
+        }
+    }
+    &:disabled {
+        pointer-events: none;
+        span {
+            color: var(--color-secondary);
+        }
+        &::before {
+            background-color: var(--color-disable);
+            border-color: var(--color-disable);
+            color: var(--color-primary);
+        }
+        &::after {
+            border-color: var(--color-disable);
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@use "../utils/" as *;
+
+footer {
+    background-color: var(--color-secondary);
+    @include toRem(height,80);
+    @include flexbox();
+    @include align-items($value: center);
+    .footer-content {
+        width: 100%;
+        position: relative;
+        @include flexbox();
+        @include flex-wrap($value: wrap);
+        @include justify-content($value: space-between);
+        @include align-items($value: center);
+        padding: 0 15px;
+        > img {
+            display: none;
+        }
+        .btn {
+            span {
+                @include flexbox();
+            }
+            svg {
+                stroke: var(--color-white);
+            }
+            &:is(:hover, :focus) {
+                svg {
+                    stroke: var(--color-primary);
+                }
+            }
+        }
+        p {
+            @include toRem(font-size, 12);
+        }
+        @include respond-above(sm) {
+            padding: 0;
+            > img {
+                display: block;
+                @include toRem(height, 20);
+            }
+        }
+    }
+}

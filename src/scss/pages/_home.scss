@@ -1,0 +1,102 @@
+@use "../utils/" as *;
+
+.content {
+    padding: 0 15px;
+    @include respond-above(sm) {
+        padding: 0;
+    }
+    &:not(:last-child) {
+        @include toRem(margin-bottom, 30);
+    }
+}
+.text-primary {
+    color: var(--color-primary);
+}
+
+.main-heading {
+    @include flexbox();
+    @include flex-direction($value: column);
+    @include align-items($value: center);
+    @include toRem(margin-bottom, 30);
+    position: relative;
+    h2 {
+        @include flexbox();
+        text-align: center;
+        @include toRem(font-size, 28);
+        @include toRem(line-height, 38);
+        color: var(--color-primary);
+        font-weight: 500;
+        position: relative;
+        @include toRem(padding-bottom, 15);
+        text-transform: uppercase;
+        span {
+            color: var(--color-white);
+            text-shadow: -1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary), 1px -1px 0 var(--color-primary), -1px -1px 0 var(--color-primary);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 80%;
+            @include toRem(height, 2.5);
+            background-color: var(--color-primary);
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    p {
+        @include toRem(margin-top, 20);
+    }
+}
+.secondary-heading {
+    @include flexbox();
+    @include justify-content($value: center);
+    @include toRem(margin-bottom, 20);
+    position: relative;
+    h3 {
+        @include flexbox();
+        text-align: center;
+        @include toRem(font-size, 20);
+        color: var(--color-primary);
+        font-weight: 500;
+        position: relative;
+        @include toRem(padding-bottom, 10);
+        text-transform: uppercase;
+        span {
+            color: var(--color-white);
+            text-shadow: -1px 1px 0 var(--color-primary), 1px 1px 0 var(--color-primary), 1px -1px 0 var(--color-primary), -1px -1px 0 var(--color-primary);
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            width: 80%;
+            @include toRem(height, 2.5);
+            background-color: var(--color-primary);
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+}
+p {
+    @include toRem(font-size, 16);
+    @include toRem(line-height, 24);
+    color: var(--color-paragraph);
+    // text-align: center;
+    &:not(:last-child) {
+        @include toRem(margin-bottom, 20);
+    }
+}
+ol {
+    list-style-type: decimal;
+    @include toRem(padding-left, 20);
+    li {
+        @include toRem(font-size, 16);
+        color: var(--color-paragraph);
+        &:not(:last-child) {
+            @include toRem(margin-bottom, 10);
+        }
+    }
+}
