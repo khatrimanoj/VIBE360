@@ -1090,6 +1090,22 @@ input:-webkit-autofill:active ~ .form-label {
   transition: all 0.2s ease-in-out;
 }
 
+.form {
+  counter-reset: form-control;
+}
+.form .form-content > .form-control, .form .cloneDiv > .form-control {
+  padding-left: 0.9375rem;
+}
+.form .form-content > .form-control:not(:last-child), .form .cloneDiv > .form-control:not(:last-child) {
+  border-bottom: 1px solid var(--color-box-border);
+  padding-bottom: 20px;
+}
+.form .form-content > .form-control::before, .form .cloneDiv > .form-control::before {
+  counter-increment: form-control;
+  content: counter(form-control) ". ";
+  position: absolute;
+  left: -10px;
+}
 .form hr {
   display: -webkit-box;
   display: -ms-flexbox;

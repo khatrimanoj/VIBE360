@@ -16,6 +16,22 @@ input:-webkit-autofill:active
     }
 }
 .form {
+	counter-reset: form-control;
+	.form-content, .cloneDiv {
+		> .form-control {
+			@include toRem(padding-left, 15);
+			&:not(:last-child) {
+				border-bottom: 1px solid var(--color-box-border);
+				padding-bottom: 20px;
+			}
+			&::before {
+				counter-increment: form-control;
+				content: counter(form-control) ". ";
+				position: absolute;
+				left: -10px;
+			}
+		}
+	}
 	hr {
 		@include flexbox();
 		@include toRem(margin-bottom, 25);
